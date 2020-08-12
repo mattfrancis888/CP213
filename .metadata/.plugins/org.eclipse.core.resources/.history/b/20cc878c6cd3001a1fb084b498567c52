@@ -1,0 +1,37 @@
+package exam;
+
+public class week4 {
+	  public static void main(String[] args) {
+		  //arrays
+		  //duble[] reading = new double[count];
+		  //Person[] specimen = new Person[100];
+		  //int[] age = {2, 12, 1};
+		  //duble[] a = new double[10];//all elements//are initialized to 0.
+		  
+		  //dont use == to check if array is same, we can use for loop and echeck if x[i] == y[i]
+		  //for each:
+		  //for (ArrayBaseType VariableName : ArrayName
+		  
+		  //varargs:
+		  //Must only have 1 vararg in a method; this is invalid
+		 // void method (String... a,int... b) {
+		  //vararg must be the last arugment in the method; this is invaid
+		  //void method (int... a, String b) 
+		  
+		  //ex of using vararg: https://gyazo.com/ddb3be29b91ef8edf1cfcb583256b865
+		  
+		  //selection sort is used to sort array in ascending order
+		  //ArrayList<String>
+		  
+		  //enums: enum workDay = {Monday, Wed}; enum constants are public, static and final (unchangeable - cannot be overridden).
+		  //Workday[] a = Workday.values(); will give you an array of the neum values
+		  //a.length
+		  
+		  //can use enums in switch
+		  //val = workDay.valueOf("ee");
+		  //switch(val){}
+		  //duble[][]table = new double[100][10];
+	  }
+	  
+	  
+}

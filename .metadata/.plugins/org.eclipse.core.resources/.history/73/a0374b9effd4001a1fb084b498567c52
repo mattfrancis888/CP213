@@ -1,0 +1,53 @@
+package exam;
+
+public class week8 {
+	void hi() {
+		
+	}
+	private int x = 10;
+	class B {
+		
+		public void hello() {
+			System.out.println(x);
+			week8.this.hi();
+			hi();
+		}
+	}
+	  
+	 public static void main(String[] args) {
+		//abstract class can implement interface
+		 
+		 //an interface can be derived from a based interface
+		 //derived interface must include the phase extends interfaceName
+		 //eg; public interface hi extends bye
+		 //a class can implement many itnerface but only 1 abstract class
+		 //if interface has same method name it will cause a compilation error like below (run the code)
+		 A a = new A();
+		 a.hi();
+		 
+		 //inner classes
+		 //advatnages: 1. both can acces to each other private variables/methods 2. outerclass more self contained 3.if inner class is used as
+		 //a helper, inner class should be marked as a private class
+		 
+		 //it is legal for the outer class to reference a private var/method in the  inner class
+		 //it is legal for the inner class to reference a private var/method in the outer class
+	 }
+	 
+}
+
+ interface test{
+	 public void hi();
+}
+ interface test1{
+	public void hi();
+	 
+}
+ class A implements test, test1{
+	 public void hi() {
+		 System.out.println("hey");
+	 }
+	 
+	 class B{
+		 super.hi();
+	 }
+}

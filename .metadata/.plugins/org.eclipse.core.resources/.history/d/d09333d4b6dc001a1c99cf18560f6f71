@@ -1,0 +1,31 @@
+package exam;
+import java.util.Arrays;
+public class hey {
+	public class Main {
+	     public void permute(int n, int[] a) {
+	         if(n == 1) {
+	              System.out.println(Arrays.toString(a));
+
+	            } else {
+	             for(int i = 1; i <= n; i ++) {
+	                 int temp = a[i];
+	                 a[i] = a[n];
+	                 a[n]=temp;
+	                 //swap a[i] with a[n]
+	                 permute(n-1, a);
+	                 //swap a[i] and [an]
+	                 temp = a[i];
+	                 a[i] = a[n];
+	                 a[n]=temp;
+
+	             }
+
+	         }
+	     }
+	     public static void main(String[] args) {
+	         Main test = new Main();
+	         int a[] = {0,7,8,9};
+	         test.permute(3, a);
+	     }
+	}
+}

@@ -1,0 +1,156 @@
+Food
+___
+
+Compare to: 1
+Name: Ravioli
+Origin: 7
+Vegetarian: false
+Calories: 246
+Hash: -1644868182
+getOriginString: 7
+Written to txt file
+FoodUtilities
+__________
+Filed Opened
+Avg cal: 791
+Avg cal by origin: 386.0
+ 
+Get food by origin:
+Name:       Lasagna
+Origin:     Italian
+Vegetarian: false
+Calories:   135
+
+Name:       Fettuccine
+Origin:     Italian
+Vegetarian: false
+Calories:   266
+
+Name:       Ravioli
+Origin:     Italian
+Vegetarian: false
+Calories:   246
+
+Name:       Crepe
+Origin:     Italian
+Vegetarian: true
+Calories:   186
+
+Name:       Pepperoni Pizza
+Origin:     Italian
+Vegetarian: false
+Calories:   713
+
+Name:       Panzerotti
+Origin:     Italian
+Vegetarian: false
+Calories:   770
+
+ 
+Get food by is vegetarian:
+Name:       Vegetable Alicha
+Origin:     Ethiopian
+Vegetarian: true
+Calories:   138
+
+Name:       Spanakopita
+Origin:     Greek
+Vegetarian: true
+Calories:   260
+
+Name:       Chamuco
+Origin:     Mexican
+Vegetarian: true
+Calories:   150
+
+Name:       Natto
+Origin:     Japanese
+Vegetarian: true
+Calories:   212
+
+Name:       Diet Free-Range Gluten-free Water
+Origin:     American
+Vegetarian: true
+Calories:   0
+
+Name:       Spicy Vegetable Moo Shu
+Origin:     Chinese
+Vegetarian: true
+Calories:   140
+
+Name:       Vegetables with Cashew Nuts
+Origin:     Chinese
+Vegetarian: true
+Calories:   143
+
+Name:       Greek Salad
+Origin:     Greek
+Vegetarian: true
+Calories:   185
+
+Name:       Shortbread 
+Origin:     Scottish
+Vegetarian: true
+Calories:   502
+
+Name:       Pavlova
+Origin:     New Zealand
+Vegetarian: true
+Calories:   272
+
+Name:       Hokey Pokey Ice Cream
+Origin:     New Zealand
+Vegetarian: true
+Calories:   106
+
+Name:       Chip Butty
+Origin:     English
+Vegetarian: true
+Calories:   956
+
+Name:       Crepe
+Origin:     Italian
+Vegetarian: true
+Calories:   186
+
+Name:       Spring Rolls
+Origin:     Chinese
+Vegetarian: true
+Calories:   200
+
+ 
+Name: 
+mcdonalds
+Origin: 
+1
+Vegetarian (Y/N): 
+N
+Calories: 
+900
+Name:       mcdonalds
+Origin:     Chinese
+Vegetarian: false
+Calories:   900
+
+ 
+Name:       Lasagna
+Origin:     Italian
+Vegetarian: false
+Calories:   135
+
+ 
+Name:       Spicy Vegetable Moo Shu
+Origin:     Chinese
+Vegetarian: true
+Calories:   140
+
+Name:       Vegetables with Cashew Nuts
+Origin:     Chinese
+Vegetarian: true
+Calories:   143
+
+Name:       Spring Rolls
+Origin:     Chinese
+Vegetarian: true
+Calories:   200
+

@@ -1,0 +1,10 @@
+package exam;
+
+public class week3 {
+
+	  public static void main(String[] args) {
+//	  You cannot use == to compare objects		  
+		  //hashcode
+	  }
+
+}

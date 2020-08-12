@@ -1,0 +1,51 @@
+package exam;
+
+public class week6 {
+	
+	  public static void main(String[] args) {
+		  //relatinship between method call and method definiton
+		  //static or early binding = binding is revolved at compile time
+		  //Such as method overloading
+		  
+		  //dynamic or late binding - bindign takes place in exectution 
+		  //Such as method overriding
+		  //late binding does not apply to static, final or private methods. (Since you cannot override the private metho)
+		  //You can create an identical method with the same name in the child however.
+		  //for static, final or private methods, java uses static binding
+		  
+		  //in static binding, if you ahve
+		  //class Sale:
+		  //public static void announcement( ){System.out.println("Sale class");}
+		 
+		//class Discount extends Sale
+			  //public static void announcement( ){System.out.println("DiscountSale class");}
+		  
+		  //sale = discount
+		  //sale.announcement() will give you "Sale class"; 
+		    Animal myAnimal = new Animal();
+		    Animal myPig = new Pig();
+		    Animal myDog = new Dog();
+		        
+		    myAnimal.animalSound();
+		    myPig.animalSound();
+		    myDog.animalSound();
+	  }
+
+class Animal {
+	  public void animalSound() {
+	    System.out.println("The animal makes a sound");
+	  }
+	}
+
+	class Pig extends Animal {
+	  public void animalSound() {
+	    System.out.println("The pig says: wee wee");
+	  }
+	}
+
+	class Dog extends Animal {
+	  public void animalSound() {
+	    System.out.println("The dog says: bow wow");
+	  }
+	}
+	  }

@@ -1,0 +1,124 @@
+package exam;
+
+import exam.week5.Animal;
+import exam.week5.CanMakeNoise;
+
+public class week8 {
+	void hi() {
+		System.out.println("hi from week8");
+	}
+	private static int x = 10;
+	class B {
+		void hi() {
+			System.out.println("hi from week8's innerclass");
+		}
+		void hello() {
+			System.out.println(x);
+			week8.this.hi(); //must be used if inner class and outerclass have same method
+			hi();
+		}
+	}
+	
+	//interfaces
+	public interface Base{
+		void base();
+	}
+	public interface Base2{
+		void rawr();
+	}
+	
+	public interface CanMakeNoise extends Base, Base2 {
+		//IMPORTANT: interface can extend more than one parent interface
+	    void makeNoise();
+	}
+	
+	public abstract class Animal implements CanMakeNoise {
+		public void hi() {
+			System.out.println("hei");
+		}
+		  @Override
+		    public void makeNoise() {
+		        System.out.println("Wuff wuff");
+		    }
+	}
+	
+
+public class Dog extends Animal {
+
+	@Override
+	public void base() {
+		// TODO Auto-generated method stub
+		
+	}
+    @Override
+    public void makeNoise() {
+        System.out.println("Wuff wuff");
+    }
+	@Override
+	public void rawr() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+	  
+	 public static void main(String[] args) {
+		//abstract class can implement interface
+		 
+		 //an interface can be derived from a based interface
+		 //derived interface must include the phase extends interfaceName
+		 //eg; public interface hi extends bye
+		 //a class can implement many itnerface but only 1 abstract class
+		 //if interface has same method name it will cause a compilation error like below (run the code)
+		 A a = new A();
+		 a.hi();
+		 
+		 //Java Comparable interface used to sort a array or list of objects based on their natural order.
+		 //Natural ordering of elements is imposed by implementing it’s compareTo() method in the objects.
+//		 
+//		 public class Employee implements Comparable<Employee> {
+//			 
+//			    private Long id;
+//			    private String name;
+//			    private LocalDate dob;
+//			     
+//			    @Override
+//			    public int compareTo(Employee o) 
+//			    {
+//			        return this.getId().compareTo( o.getId() );
+//			    }
+//			}
+		 
+		 //inner classes
+		 //advatnages: 1. both can acces to each other private variables/methods 2. outerclass more self contained 3.if inner class is used as
+		 //a helper, inner class should be marked as a private class
+		 
+		 //it is legal for the outer class to reference a private var/method in the  inner class
+		 //it is legal for the inner class to reference a private var/method in the outer class
+		 week8 r = new week8();
+		 week8.B z = r.new B(); //cannot acess B class if it's private. Dosen't seem to work here but try
+		 //https://www.tutorialspoint.com/compile_java_online.php
+		 z.hello();
+		 
+		 //Given an OuterClass that has an InnerClass
+		 //-Any DerivedClass of OuterClass will automatically have InnerClass as an inner class
+		 //-In this case, the DerivedClass cannot override the InnerClass
+		 
+		 //when an inner class must be static
+		 //–If an object of the inner class is created within a static method of the outer class
+		 //–If the inner class must have static member (static classes can only acces static members; private/publc members can acess any modifiers)
+	 }
+	 
+}
+
+ interface test{
+	 public void hi();
+}
+ interface test1{
+	public void hi();
+	 
+}
+ class A implements test, test1{
+	 public void hi() {
+		 System.out.println("hey from class A");
+	 }
+}

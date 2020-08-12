@@ -1,0 +1,12 @@
+package exam;
+
+public class week6 {
+	  public static void main(String[] args) {
+		  //relatinship between method call and method definiton
+		  //static or early binding = binding is revolved at compile time
+		  //Such as method overloading
+		  
+		  //dynamic or late binding - bindign takes place in exectution 
+		  //Such as method overriding
+	  }
+}

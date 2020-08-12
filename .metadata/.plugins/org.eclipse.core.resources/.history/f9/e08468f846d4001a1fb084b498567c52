@@ -1,0 +1,24 @@
+package exam;
+
+public class week7 {
+	 public static void main(String[] args) {
+		 //ioexception . This exception is related to Input and Output operations in the Java code. 
+		 //This exception happens when there is a failure during reading, writing and searching file or directory operations.
+//		 try{
+		 //if( condition) throw new Exception(StringArgument);}
+//		 catch(Exception e){
+//			 		String message = e.getMessage();
+//			 		System.out.println(message);
+//			 		System.exit(0);
+//		 } 
+	 }
+	 public class DivideByZeroException extends Exception {
+		 public DivideByZeroException(String message) {
+			 super(message);
+		 }
+	 }
+	 
+	 public void divideInt(int i, int j) throws DivideByZeroException {
+		 if(j == 0) throw new DivideByZeroException("ee");
+	 }
+}

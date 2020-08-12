@@ -1,0 +1,85 @@
+package cp213;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.text.DecimalFormat;
+
+@SuppressWarnings("serial")
+public class RTSameView extends JPanel {
+	  private final RTModel model;
+	  
+	   private class AverageButtonListener implements ActionListener {
+			/**
+			 * Determines whether values are incremented (+) or decremented (-).
+			 */
+
+			@Override
+			public void actionPerformed(final ActionEvent evt) {
+				double avg = (RTSameView.this.model.getBase() + RTSameView.this.model.getHeight()) / 2;
+				RTSameView.this.model.setBase(
+						avg);
+				RTSameView.this.model.setHeight(
+						avg);
+				
+			
+			}
+		  }
+	   
+	   private class BaseListener implements PropertyChangeListener {
+		   //If base value, this gets triggered
+
+			@Override
+			public void propertyChange(final PropertyChangeEvent evt) {
+				
+				RTSameView.this.renderCommonVal();
+				RTSameView.this.hypo.setText(RTSameView.f
+				    .format(RTSameView.this.model.getHypotenuse()));
+			}
+		   }
+	    private static final DecimalFormat f = new DecimalFormat("###.##");
+	   private final JButton avgButton = new JButton("AVERAGE");
+//	   private final JLabel height = new JLabel(" ");
+//	   private final JLabel base = new JLabel(" ");
+	   private final JLabel common = new JLabel("Common: ");
+	   private final JLabel commonVal = new JLabel(" ");
+	   private final JLabel hypo = new JLabel(" ");
+	   
+	   private void layoutView() {
+			this.setLayout(new GridLayout(3, 4));
+			this.add(new JLabel("Reset: "));
+			this.add(this.avgButton);
+			this.add(common);
+			this.add(commonVal);
+	   }
+	   
+	   private void registerListeners() {
+			// Add widget listeners.
+			this.avgButton.addActionListener(new AverageButtonListener());
+			this.model.addPropertyChangeListener(RTModel.BASE_CHANGE,
+					new BaseListener());
+	   }
+	   
+	   public void renderCommonVal() {
+		   if(RTSameView.this.model.getBase() == RTSameView.this.model.getHeight()) {
+				RTSameView.this.commonVal.setText(RTSameView.f.format(RTSameView.this.model.getBase()));
+			} else {
+				RTSameView.this.commonVal.setText(RTSameView.f.format(" "));
+			}
+	   }
+	   
+	   public RTSameView(final RTModel newModel) {
+			this.model = newModel;
+			this.layoutView();
+			this.registerListeners();
+		
+			// Initialize the view labels.
+			renderCommonVal();
+		}
+}

@@ -1,0 +1,8 @@
+package exam;
+
+public class week5 {
+	  public static void main(String[] args) {
+		  //original class is the base class
+		  //new class is the derivced class (automaticly has the varialbes/methods the base class has)
+	  }
+}

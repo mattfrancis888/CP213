@@ -1,0 +1,11 @@
+package exam;
+
+public class week10multi {
+	  public static void main(String[] args) {
+		  //threads are often thought as paraellel execution
+//they usually do not really execute in parallel–
+		  //Instead, the computer switches resources 
+		  //between threads so that each one does a 
+		  //little bit of computing in tu
+	  }
+}

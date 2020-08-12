@@ -1,0 +1,14 @@
+package exam;
+
+public class week5 {
+	  public static void main(String[] args) {
+		  //original class is the base class
+		  //new class is the derivced class(or subclass that extends base class) (automaticly has the varialbes/methods the base class has)
+		  //return types cannot be changed when overiding a method
+		  //but in java 5+ this can be done with a covarient return type
+		  
+		  //IMPORTANT:
+		 //The access permission of an overridden method can be changed from private in the base class 
+		  //to public (or some other more permissive access) in the derived clas
+	  }
+}

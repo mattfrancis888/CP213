@@ -1,0 +1,89 @@
+package fran0880_l07;
+
+
+import java.util.ArrayList;
+
+public class ArrayList_Demo {
+		 public static void main(String[] args) {
+			                          // Declare and initialize String instance variables.
+		        String s1 = "First";
+		        String s2 = "Second";
+		        String s3 = "Third";
+		        String s4 = "Four";
+		        String s5 = "Fifth";
+		                              // Declare and instantiate the "words" ArrayList of String Objects 
+		        ArrayList<String> words = new ArrayList<String>();
+		        
+		        System.out.println();
+		        System.out.println("Starting the ArrayList Example:");
+		        System.out.println("==============================");
+		        
+		        System.out.println("Initial ArrayList size is: " + words.size());       
+		                                  
+		                              // Insert STRINGS: s1, s2, s4, and s5 in the ArrayList "words",
+		                              //                 in the given order!
+		                              // NOTE: DO NOT insert string "s3"!!!
+		       
+		        //TASK-B1:: <*** YOUR CODE HERE ***>
+		        words.add(s1);
+		        words.add(s2);
+		        words.add(s3);
+		        words.add(s4);
+		        words.add(s5);
+		        System.out.println();
+		        System.out.println("Task-B1");
+		        System.out.println("   Have inserted........: [s1, s2, s4, and s5]");
+		        System.out.println("   ArrayList size is now: " + words.size());
+		        
+		                              // Print the contents the "words" ArrayList.
+		        System.out.println();
+		        System.out.println("Task-B2:");
+		        System.out.println("   Contents of \"words\" ArrayList:");
+		        System.out.println("   =============================");
+		        
+		        //TASK-B2:: <*** YOUR CODE HERE ***>
+		       
+		        for(String val : words) {
+		        	System.out.println(val);
+		        }
+		      
+		                              // Check and report if ArrayList "words" contains s1, or not. 
+		                              // Check and report if ArrayList "words" contains s3, or not.
+		        System.out.println();
+		        System.out.println("Task-B3:");
+		        //TASK-B3:: <*** YOUR CODE HERE ***>
+		        words.contains(s1);
+		        words.contains(s3);
+		                              // Insert "s3" in THIRD position.	       
+		        //TASK-B4:: <*** YOUR CODE HERE ***>
+		        
+		        System.out.println();
+		        System.out.println("Task-B4:");
+		        System.out.println("   Have inserted........: [s3] at THIRD position.");
+		        System.out.println("   ArrayList size is now: " + words.size());
+		        System.out.println();
+		        System.out.println("   Contents of \"words\" ArrayList:");
+		        System.out.println("   =============================");        
+		        for (int i = 0; i < words.size(); i++) {
+		            System.out.println("   " + words.get(i));
+		        }
+		        	            	        
+		                              // Change the last element to:
+		                              //       "<value> - is the last position!", 
+		                              // where <value> is the existing "content" of the
+		                              // last element of the ArrayList "words".
+		        
+		        //TASK-B5:: <*** YOUR CODE HERE ***>
+		        
+		        System.out.println();
+		        System.out.println("Task-B5:");
+		        System.out.println("   Have changed contents of last element.");
+		        System.out.println("   ArrayList size is now: " + words.size());
+		        System.out.println();	      
+		        System.out.println("   Contents of \"words\" ArrayList:");
+		        System.out.println("   =============================");	        
+		        for (int i = 0; i < words.size(); i++) {
+		            System.out.println("   " + words.get(i));
+		        }
+		    }
+}

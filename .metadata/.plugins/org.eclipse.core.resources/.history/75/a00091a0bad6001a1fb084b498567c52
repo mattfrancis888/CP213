@@ -1,0 +1,10 @@
+1.How long, on average, will it take the reactor to meltdown assuming it starts from room temperature (25C) and the rod lengths are 0?
+A:Manual 32 Ticks (left alone), Automatic 34 Ticks, Average 33 Ticks
+therefore roughly mid 30s of ticks (Both from 25 degrees and rod lengths are 0)
+
+
+2. How fast can the reactor be brought up to an operating temperature of 600C without having it subsequently meltdown?
+A:Manual 29 or 30 Ticks (when left alone), Automatic 27-29 Ticks 
+(Both from 25 degrees - 600 degrees approximately and rod lengths of 0)
+3.Starting with control rods inserted 50 cm, what's the highest temperature you can start at without the reactor melting down?
+A:  929 degrees.

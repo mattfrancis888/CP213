@@ -1,0 +1,13 @@
+package exam;
+
+public class week3 {
+
+	  public static void main(String[] args) {
+//	  You cannot use == to compare objects		  
+		  //hashcode
+		  //Contract between hashCode() and equals()
+		  //•It is generally necessary to override the hashCode() method whenever equals() method is overridden
+		  //•the general contract for the hashCode() and equals methods  states that equal objects must have equal hash code
+	  }
+
+}

@@ -1,0 +1,8 @@
+package exam;
+
+public class week7 {
+	 public static void main(String[] args) {
+		 //ioexception . This exception is related to Input and Output operations in the Java code. 
+		 //This exception happens when there is a failure during reading, writing and searching file or directory operations. I
+	 }
+}

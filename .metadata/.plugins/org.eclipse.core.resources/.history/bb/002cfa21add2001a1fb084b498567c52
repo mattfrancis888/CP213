@@ -1,0 +1,24 @@
+package exam;
+
+public class week2 {
+//Compound Statement:  A branch statement that is made up of a list of statements
+	//In a switch(variable){case }
+	  public static void main(String[] args) {
+	int day = 4;
+	 String str = "two"; 
+     switch(str) 
+     { 
+         case "one": 
+             System.out.println("one"); 
+             break; 
+         case "two": 
+             System.out.println("two"); 
+             break; 
+         case "three": 
+             System.out.println("three"); 
+             break; 
+         default: 
+             System.out.println("no match"); 
+     }
+     } 
+}

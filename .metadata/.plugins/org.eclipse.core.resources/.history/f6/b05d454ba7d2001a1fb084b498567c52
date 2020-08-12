@@ -1,0 +1,21 @@
+package exam;
+import java.text.NumberFormat;
+
+public class week1 {
+	  public static void main(String[] args) {
+		    System.out.println("Hello world!");
+		    System.out.printf("%5s %n", "E");
+		    System.out.printf("%3.2f ",14444.223);
+		    System.out.printf("%13.2f ",14444.223);
+		    
+		    //use number format for money
+		    NumberFormat moneyFormater =
+		    		 NumberFormat.getCurrencyInstance();
+
+		    System.out.println(moneyFormater.format(19.8));
+		    System.out.println(moneyFormater.format(19.81111));
+//		    $19.80
+//		    $19.81
+
+		  }
+}

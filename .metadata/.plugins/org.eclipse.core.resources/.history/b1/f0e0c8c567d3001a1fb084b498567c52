@@ -1,0 +1,10 @@
+package exam;
+
+public class week4 {
+	  public static void main(String[] args) {
+		  //arrays
+		  //duble[] reading = new double[count];
+		  //Person[] specimen = new Person[100];
+		  //nt[] age = {2, 12, 1};
+	  }
+}

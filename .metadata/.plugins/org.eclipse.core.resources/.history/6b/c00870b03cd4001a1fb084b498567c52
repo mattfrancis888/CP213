@@ -1,0 +1,104 @@
+package exam;
+
+public class week6 {
+	
+	  public static void main(String[] args) {
+		  //relatinship between method call and method definiton
+		  //static or early binding = binding is revolved at compile time
+		  //Such as method overloading
+		  
+		  //dynamic or late binding - bindign takes place in exectution 
+		  //Such as method overriding (the toString override method is an example too)
+		  //late binding does not apply to static, final or private methods. (Since you cannot override these methods)
+		  //You can create an identical method with the same name in the child however.
+		  //for static, final or private methods, java uses static binding
+		  
+		  //in static binding, if you ahve
+		  //class Sale:
+		  //public static void announcement( ){System.out.println("Sale class");}
+		 
+		//class Discount extends Sale
+			  //public static void announcement( ){System.out.println("DiscountSale class");}
+		  
+		  //sale = discount
+		  //sale.announcement() will give you "Sale class"; 
+		  
+		  //Example below
+		    Animal myAnimal = new Animal();
+		    Animal myPig = (Animal) new Pig(); //upcasting (always allowed by default, no need to state (Animal) )
+		    Animal myDog = new Dog();
+		        
+		    myAnimal.animalSound();
+		    myPig.animalSound();
+		    myDog.animalSound();
+		    //From: https://www.w3schools.com/java/showjava.asp?filename=demo_polymorphism
+		    
+		    //final modifier
+		    //A method marked final indicats that the method cannot be overriden
+		    //A class marked final indicates that it  cannot be used as a base class from which to derive any other classe
+		    
+		    //Upcasting and downcating
+		    //Down casting
+//		    Animal animal = new Dog();
+//		    Dog castedDog = (Dog) animal
+		    //Invalid downcasting that will return ClassCastException:
+		    //Animal animal = new Animal();
+		   // Dog notADog = (Dog) animal;
+		    //you can use instanceof to see if downcasting is legitimate; obj instanceof classname
+		    
+		    //Upcasting:
+		    //SaleVariable saleVariable = new SaleVariable() // base class
+		    //DiscountSale discountVariable = new DiscountSale("paint", 15,10); //derived class
+		     //saleVariable = discountVariable;  or saleVariabl = new DiscoutnSale(..);
+		    
+		    //copy constructor (whill be used to clone())
+//			public Complex(double re, double im) { 
+//				this.re = re; 
+//				this.im = im; 
+//			} 
+//			
+//			// copy constructor 
+//			public Complex(Complex c) {  
+//				System.out.println("Copy constructor called"); 
+//				re = c.re; 
+//				im = c.im; 
+//			} 
+		    
+		    //in main:
+//			Complex c1 = new Complex(10, 15); 
+//			
+//			// Following involves a copy constructor call 
+//			Complex c2 = new Complex(c1); 
+		    //from
+		    
+		    //clone method: public Sale clone(){return new Sale(this);}
+		    
+		    //pitfall:
+		    //dont do i] = new Sale(a[i]);  
+		    //do b[i] = (a[i].clone());//The reason this works is because the method clone has the same name in all classes, and polymorphism works with method nam
+		    
+		    //abstract class:
+		    //public abstract double getPay();
+	  }
+			
+	  }
+
+}
+
+class Animal {
+	  public static void animalSound() {
+	    System.out.println("The animal makes a sound");
+	  }
+	}
+
+	class Pig extends Animal {
+	  public static void animalSound() {
+	    System.out.println("The pig says: wee wee");
+	  }
+	}
+
+	class Dog extends Animal {
+	  public void animalSound() {
+	    System.out.println("The dog says: bow wow");
+	  }
+	}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;fran0880_a04/src/cp213&apos;&#x0D;&#x0A;- Original project: &apos;a04_test&apos;&#x0D;&#x0A;- Destination element: &apos;fran0880_a04/src/cp213&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     decline.txt&#x0D;&#x0A;     miserables.txt&#x0D;&#x0A;     otoos610.txt&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="=fran0880_a04/src&lt;cp213" element1="src/cp213/decline.txt" element2="src/cp213/miserables.txt" element3="src/cp213/otoos610.txt" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1594071632780" units="0" version="1.0"/>
+</session>

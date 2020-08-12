@@ -1,0 +1,183 @@
+package exam;
+
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class week9 {
+	//Jframe
+	JFrame firstWindow = new JFrame();
+	firstWindow.setDefaultCloseOperation(Frame.HIDE_ON_CLOSE);
+	
+	//Button
+	Button endButton = new JButton("Click to end program.");firstWindow.add(endButton);
+
+	
+	//Jlabel
+	JLabel greeting = new JLabel("Hello");
+	
+	//Color of window can be created as:
+    setContentPane().setBackground(Color.RED);
+	
+	//layouts
+	// BorderLayout manager places the components that are added to a JFrame object into five region (north, south, west, east, center)
+	setLayout(new BorderLayout());
+	add(label1, BorderLayout.NORTH);
+	
+	//FlowLayout goes from left to right
+	setLayout(new FlowLayoutManager());
+	FlowLayoutManager.add(label1);
+	
+	//GridLayout is a 2d grid
+	setLayout(new GridLayout(rows, columns));
+	add(label1) //no need for GridLayout.add
+	
+	//Jpanel acts as a container; uses layouts
+	JPanel container = new JPanel();
+	container.setLayout(new GridLayout(1,2)));
+	container.add(label1);
+	container.setBackground(COLR.RED);
+	
+	
+	//action listenres:
+	public class ActionListenerExample implements ActionListener{  //can implement ActionListener to innerclass too
+		JButton endButton = new JButton("hello");
+		endButton.addActionListener(this or new InnerClass() that implements Action Listener);  
+		//metho that must be acompanied with ActionListener
+		@Override
+		public void actionPerformed(ActionEvent e){  
+			String command = e.getActionCommand();
+			if (command.equals("Click to end program.")) {}
+            tf.setText("Welcome to Javatpoint.");  
+		}  
+	}
+	
+	//color:
+	/A JFrame can not colored directly
+	//a program must color something called the CONTENT PANE of the JFrame
+	public class BoxLayOutTest extends JFrame {
+	    public BoxLayOutTest() {
+	        getContentPane();
+	        or new JFrame().getContentPane();
+	        
+	
+	 //JComponent
+	 //The JComponent class is the base class of all Swing components 
+	  private void createLayout(JComponent... arg) {}
+	        
+	
+	//text fields
+	JTextField name = new JTextField("Enter name here.", 30); //30 is the max char
+	name.setText("..");
+	
+	//textarea
+	JTextArea theText = new JTextArea(5,20); //5 is the max # of lines //20 is the max char
+
+//text area and text field can have a setting where it's editable or not:
+	text.setEditable(false);
+	
+	//textfields return string
+	
+	//In a Swing program, throwing an uncaught exception does not end the GUI
+	
+	//Swing II
+	//WindowListeners
+	//Clicking the close window button on a JFrame fires the window event
+	
+	//SetWindowListenr registers a window listener
+	
+	 addWindowListener(this or new className());
+	 public class WindowEventDemo extends JFrame implements WindowListener{
+		 //you have to implement interfaces created by WindowListener
+		 //you can do things such as creating a new window when the x button is closed
+		 //make sure to call setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE) if so
+		 //because the default is HIDE_ON_CLOSE
+		 //dispose() is used to elminate the JFrame without ennding the program	
+	 }
+	 
+	 
+	 //When a class does not give true implementations to most of the 
+	 //method headings in the WindowListener interface, it may be better 
+	 //to make it a derived class of the WindowAdapter 
+	 
+	 //Imageicon is used to convert a picture file to Swing icon
+	 ImageIcon icon = new ImageIcon("hey.gif")
+	//can be added to JLabel or JButtons
+			 JLabel.setIcon(icon);
+	 //or 
+	 JLabel a = new JLabel(icon);
+	 a.setText("..");
+	 
+	 //Insets are used to specify the size of the margin ofa button/menu item
+	 //Didnt realy cover it that much
+	 
+	 //JScrollPane is a scrollbar for textarea
+	 memoDisplay = new JTextArea(line, char_max);
+	 JScrollPane scrolledText = new JScrollPane(memoDisplay);
+	 scrolledText.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS)
+	 panel.add(scrolledText);
+	 
+	 //visibility
+	 JLabel.setVisibility(false);
+	 
+	 //used to draw
+	 void paint(Graphics g) {
+		 super.paint(g);
+		 g.drawOval(x, y, width, height);
+	 }
+	 //it's not explicity invoked
+	 
+	 //repaint method should be invoked when the graphics content of a window is chang
+	 repaint();
+	 //must be invoked
+	 
+	 // invocation of validate causes a container to lay out its components aga
+	 //he dosent show code
+	 
+	 //changing color
+	 g.setColor(Color.RED)
+	 
+	 //Defining colors
+	 //Interers or floats may be used when deifning rgb values
+	 Color brown = new Color(200,150, (float)33.3);
+	 
+	 //Color choosers dialog box
+	 sample Color = JColorChooser.showDialog(this, "JColorChooser", sampleColor)
+
+	//drawString lets you customize a stirng
+	 public class HelloWorldApplet extends Applet{
+		    public void paint(Graphics g) {    
+
+		    g.drawString("Hello World", 100, 100);    
+		    g.drawString(theText, X_START, Y_Start);
+		    }
+		}
+	
+	 
+	 //Font
+	 font = new Font("Serif", FONT.BOLD, POINT_SIZE);
+
+	 
+	 //PropertyChangeListener
+	 KeyboardFocusManager focusManager =
+			   KeyboardFocusManager.getCurrentKeyboardFocusManager();
+			focusManager.addPropertyChangeListener(new FocusManagerListener());
+			...
+			public FocusManagerListener implements PropertyChangeListener {
+			    public void propertyChange(PropertyChangeEvent e) {
+			        String propertyName = e.getPropertyName();
+			        if ("focusOwner".equals(propertyName) {
+			            ...
+			        } else if ("focusedWindow".equals(propertyName) {
+			            ...
+			        }
+			    }
+			    ...
+			}
+}
+
+

@@ -1,0 +1,68 @@
+package cp213;
+
+import cp213.Reactor.Status;
+
+/**
+ * A class to control a Reactor model. It's job is to initialize a Reactor and
+ * maximize its power output while avoiding a meltdown.
+ *
+ * @author -- Matthew Francis --
+ * @author David Brown
+ * @version 2019-03-22
+ */
+public class ReactorController implements Runnable {
+
+	// The reactor to control.
+	private final Reactor model;
+	private final ReactorView view;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param model The reactor model.
+	 */
+	public ReactorController(Reactor model, ReactorView view) {
+		this.model = model;
+		this.view = view;
+	}
+	
+	private double tempPrediction(int predictions,double oldTemp) {
+		double temp=oldTemp;
+		for (int i=0;i<= predictions;i++) {
+			temp = (temp*1.125)- (200-model.getRodsHeight() )+3;
+		}
+		return temp;
+	}
+
+	/*
+	 * 3
+	 * (non-Javadoc)
+	 *
+	 * @see java.lang.Runnable#run()
+	 *
+	 * Run the reactor control.
+	 */
+	@Override
+	public void run() {
+		while (model.getStatus()==Status.OPERATING&&!view.manual) {
+			model.tick();
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (tempPrediction(22,model.getTemperature())>=Reactor.MAX_TEMP)
+				model.lowerRods();
+			else 
+				model.raiseRods();
+		} while (model.getStatus()==Status.OPERATING&&view.manual) {
+			model.tick();
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+}

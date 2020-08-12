@@ -1,0 +1,58 @@
+package cp213;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+
+@SuppressWarnings("serial")
+public class RTSameView extends JPanel {
+	  private final RTModel model;
+	  
+	   private class ResetButtonListener implements ActionListener {
+			/**
+			 * Determines whether values are incremented (+) or decremented (-).
+			 */
+
+			@Override
+			public void actionPerformed(final ActionEvent evt) {
+				double avg = (RTSameView.this.model.getBase() + RTSameView.this.model.getHeight()) / 2;
+				RTSameView.this.model.setBase(
+						avg);
+				RTSameView.this.model.setHeight(
+						avg);
+			}
+		  }
+	   
+	    private static final DecimalFormat f = new DecimalFormat("###.##");
+	   private final JButton resetButton = new JButton("RESET");
+	   private final JLabel height = new JLabel(" ");
+	   private final JLabel base = new JLabel(" ");
+	   
+	   private void layoutView() {
+			this.setLayout(new GridLayout(3, 4));
+			this.add(new JLabel("Reset: "));
+			this.add(this.resetButton);
+			this.add(height);
+			this.add(base);
+	   }
+	   
+	   private void registerListeners() {
+			// Add widget listeners.
+			this.resetButton.addActionListener(new ResetButtonListener());
+	   }
+	   
+	   public RTSameView(final RTModel newModel) {
+			this.model = newModel;
+			this.layoutView();
+			this.registerListeners();
+			// Initialize the view labels.
+			this.base.setText(RTSameView.f.format(this.model.getBase()));
+			this.height.setText(RTSameView.f.format(this.model.getHeight()));
+		   }
+}

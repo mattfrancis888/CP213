@@ -1,0 +1,9 @@
+package exam;
+
+public class week1 {
+	  public static void main(String[] args) {
+		    System.out.println("Hello world!");
+		    System.out.printf("%5s %n", "E");
+		    System.out.printf("%13.2f ",14444.223);
+		  }
+}

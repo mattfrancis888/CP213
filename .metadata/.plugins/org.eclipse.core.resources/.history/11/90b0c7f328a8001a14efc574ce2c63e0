@@ -1,0 +1,12 @@
+package fran0880_l04;
+
+public class EmployeeRecordDemo {
+	public static void main(String[] args) {
+		EmployeeRecord emp = new EmployeeRecord();
+		emp.setEmpAge(10);
+		emp.setEmpName("Matt");
+		System.out.println("Name: " + emp.getEmpName());
+		System.out.println("Age: " + Integer.toString(emp.getEmpAge()));
+		System.out.println(emp);
+	}
+}

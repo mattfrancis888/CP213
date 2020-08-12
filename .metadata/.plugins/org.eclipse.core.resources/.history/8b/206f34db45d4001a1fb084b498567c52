@@ -1,0 +1,26 @@
+package exam;
+
+public class week7 {
+	 public static void main(String[] args) {
+		 //ioexception . This exception is related to Input and Output operations in the Java code. 
+		 //This exception happens when there is a failure during reading, writing and searching file or directory operations.
+//		 try{
+		 //if( condition) throw new Exception(StringArgument);}
+//		 catch(Exception e){
+//			 		String message = e.getMessage();
+//			 		System.out.println(message);
+//			 		System.exit(0);
+//		 } 
+	 }
+}
+public class StudentManager {
+	 
+    public Student find(String studentID) throws StudentNotFoundException {
+        if (studentID.equals("123456")) {
+            return new Student();
+        } else {
+            throw new StudentNotFoundException(
+                "Could not find student with ID " + studentID);
+        }
+    }
+}

@@ -1,0 +1,7 @@
+package exam;
+
+public class week6 {
+	  public static void main(String[] args) {
+		  //link between method call and method definiton
+	  }
+}

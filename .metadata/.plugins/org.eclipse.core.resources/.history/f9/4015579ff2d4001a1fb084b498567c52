@@ -1,0 +1,32 @@
+package exam;
+
+public class week8 {
+
+	 }
+	 
+	 public static void main(String[] args) {
+		//abstract class can implement interface
+		 
+		 //an interface can be derived from a based interface
+		 //derived interface must include the phase extends interfaceName
+		 //eg; public interface hi extends bye
+		 //a class can implement many itnerface but only 1 abstract class
+		 A a = new A();
+		 a.hi();
+		 
+	 }
+	 
+}
+
+ interface test{
+	 public void hi();
+}
+ interface test1{
+	public void hi();
+	 
+}
+ class A implements test, test1{
+	 public void hi() {
+		 System.out.println("hey");
+	 }
+}

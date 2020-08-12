@@ -1,0 +1,41 @@
+package exam;
+
+public class week8 {
+	void hi() {
+		
+	}
+	class B {
+		week8.this.hi();
+	}
+	  
+	 public static void main(String[] args) {
+		//abstract class can implement interface
+		 
+		 //an interface can be derived from a based interface
+		 //derived interface must include the phase extends interfaceName
+		 //eg; public interface hi extends bye
+		 //a class can implement many itnerface but only 1 abstract class
+		 //if interface has same method name it will cause a compilation error like below (run the code)
+		 A a = new A();
+		 a.hi();
+		 
+	 }
+	 
+}
+
+ interface test{
+	 public void hi();
+}
+ interface test1{
+	public void hi();
+	 
+}
+ class A implements test, test1{
+	 public void hi() {
+		 System.out.println("hey");
+	 }
+	 
+	 class B{
+		 super.hi();
+	 }
+}

@@ -1,0 +1,17 @@
+package exam;
+
+public class week4 {
+	  public static void main(String[] args) {
+		  //arrays
+		  //duble[] reading = new double[count];
+		  //Person[] specimen = new Person[100];
+		  //int[] age = {2, 12, 1};
+		  //duble[] a = new double[10];//all elements//are initialized to 0.
+		  
+		  //dont use == to check if array is same, we can use for loop and echeck if x[i] == y[i]
+		  //or (ArrayBaseType VariableName : ArrayName
+		  
+	  }
+	  
+	  
+}

@@ -1,0 +1,23 @@
+package exam;
+
+public class hey {
+	 int a = ;
+	 public void int permute(int n, int[] a) {
+		 if(n == 1) {
+			 System.out.println(a);
+		 } else {
+			 for(int i = 0; i <= n; i ++) {
+				 int temp = a[i];
+				 a[i] = a[n];
+				 //swap a[i] with a[n]
+				 permute(n - 1, a);
+				 //swap a[i] and [an]
+			 }
+		 }
+	 }
+	 public static void main(String[] args) {
+		 hey test = new hey();
+		 int a[] = {0,7,8,9};
+		 test.permute(3, a);
+	 }
+}

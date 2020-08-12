@@ -1,0 +1,17 @@
+package fran0880_l04;
+
+import java.util.Scanner;
+
+public class EmployeeRecordDemo {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		EmployeeRecord emp1 = new EmployeeRecord();
+		System.out.println("Enter first employee Name: ");
+		emp1.setEmpName(input.nextLine());
+		System.out.println("Enter first employee Age: ");
+		emp1.setEmpAge(Integer.parseInt(input.nextLine()));
+		System.out.println("Name: " + emp1.getEmpName());
+		System.out.println("Age: " + Integer.toString(emp1.getEmpAge()));
+		System.out.println(emp1);
+	}
+}

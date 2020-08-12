@@ -1,0 +1,73 @@
+package exam;
+
+public class week10multi {
+	  public static void main(String[] args) {
+		  //threads are often thought as paraellel execution
+//they usually do not really execute in parallel–
+		  //Instead, the computer switches resources 
+		  //between threads so that each one does a 
+		  //little bit of computing in turn\
+		  
+		  
+		  //may throw InterruptedException
+		  //if thread is interuped when sleeping
+		  
+		  //run methods tells what the thread should do when it starts
+		  public class MyRunnableTask implements Runnable { 
+			     public void run() { 
+			         // do stuff here 
+			     } 
+			} 
+		  Thread t = new Thread(new MyRunnableTask()); 
+		  t.start();
+		  
+		  //or
+		  Thread t = new Thread(new Runnable() { 
+			    public void run() { 
+			        // stuff here 
+			    } 
+			}); 
+			t.start(); 
+			
+			
+			
+			// if your class provides more functionality 
+			//rather than just running as Thread, you should implement 
+			//Runnable interface to provide a way to run it as Thread. 
+			//If your class only goal is to run as Thread, 
+			//you can extend Thread class
+			//Race Conditions
+			//When multiple threads change a shared variable it is
+			//sometimes possible that the variable will end up with the 
+			//wrong (and often unpredictable) value
+			class RaceCondition extens Thread{
+				RaceCodition(Counter)
+			}
+			
+			RaceCondition[] threads = new RaceCondition[3000];
+			threads[0] = new RaceCondition("hey");
+			threads[1] = new RaceCondition("bye");
+			
+			//output can be hey or bye
+			
+			//to make a thread run one at a time
+			//use the keyword syncrhonized. This is called a CRITICAL REGION.
+			public synchronized void increment() {
+				
+			}
+			
+			//or
+			public void increment() {
+				synchronized(this);
+			}
+			
+			//by doing so, if we start this thread and have another thread running; the other thread cannot run this
+		  
+			
+			//Transmission Control Protocol – TCP
+			//–Most common network protocol on the Internet–Called a 
+			//reliable protocol because it guarantees that data sent from the sender
+			//is received in the same order it is sent
+			
+	  }
+}

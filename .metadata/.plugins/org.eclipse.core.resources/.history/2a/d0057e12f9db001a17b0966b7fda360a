@@ -1,0 +1,15 @@
+package exam;
+
+public class hey {
+	 int a = ;
+	 public void int permute(int n, int a) {
+		 if(n == 1) {
+			 System.out.println(a);
+		 }
+	 }
+	 public static void main(String[] args) {
+		 hey test = new hey();
+		 int a[] = {0,7,8,9};
+		 test.permute(3, a)
+	 }
+}

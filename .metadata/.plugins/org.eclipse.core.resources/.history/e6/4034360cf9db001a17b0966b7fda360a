@@ -1,0 +1,13 @@
+package exam;
+
+public class hey {
+	 int a = ;
+	 public void int permute(int n, int a) {
+		 
+	 }
+	 public static void main(String[] args) {
+		 Hey test = new Hey();
+		 int a[] = {0,7,8,9};
+		 test.permute(3, a)
+	 }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 7 elements from project &apos;fran0880_l10&apos;&#x0D;&#x0A;- Original project: &apos;fran0880_l10&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     OneFrameMain.java&#x0D;&#x0A;     OneFrameView.java&#x0D;&#x0A;     RTButtonView.java&#x0D;&#x0A;     RTGraphicView.java&#x0D;&#x0A;     RTModel.java&#x0D;&#x0A;     RTNumericView.java&#x0D;&#x0A;     ThreeFramesMain.java" description="Delete elements" element1="/src&lt;{RTButtonView.java" element2="/src&lt;{RTNumericView.java" element3="/src&lt;{RTModel.java" element4="/src&lt;{RTGraphicView.java" element5="/src&lt;{ThreeFramesMain.java" element6="/src&lt;{OneFrameMain.java" element7="/src&lt;{OneFrameView.java" elements="7" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1595106304379" subPackages="false" version="1.0"/>
+</session>

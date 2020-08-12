@@ -1,0 +1,104 @@
+package cp213;
+
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+/**
+ * Spawns circle frames when the "Spawn" button is pushed.
+ *
+ * @author David Brown
+ * @version 2019-03-21
+ */
+@SuppressWarnings("serial")
+public class SpawnView extends JPanel {
+                              // Define the size and location of the circle frames.
+   public static final int       HEIGHT = 300;
+   public static final int       WIDTH  = 300;
+   public static final Dimension SIZE   = new Dimension(SpawnView.WIDTH, SpawnView.HEIGHT);
+
+                                       // Attributes
+   private final Point location = new Point(0, 0);
+                                       // Attributes to handle screen placement.
+   private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+                                       // Spawns new circle frames.
+   private final JButton spawnButton = new JButton("Spawn");
+                                       // Provides an unbounded pool of execution threads.
+   //private final ExecutorService threadPool = Executors.newCachedThreadPool();
+                                       // Or: limit number of available threads.
+                                       // private final ExecutorService threadPool = Executors.newFixedThreadPool(4);
+  //Above can run as many circle windows as possible
+    private final ExecutorService threadPool = Executors.newFixedThreadPool(4);
+   //A: No circles will show up after the fourth window!
+   /**
+    * Constructor.
+    */
+   public SpawnView() {
+     this.layoutView();
+	 this.registerListeners();
+   }
+
+   /**
+    * Lays out the panel components.
+    */
+    private void layoutView() {
+	   this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+	   final JLabel instructLabel = new JLabel("Spawn a Circle");
+	   instructLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+	   instructLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
+	   this.add(instructLabel);
+	   this.spawnButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+	   this.spawnButton.setAlignmentY(Component.CENTER_ALIGNMENT);
+	   this.add(this.spawnButton);
+    }
+
+    /**
+     * Determines the location of the next circle frame. Lays out frames from left-to-right, top-to-bottom.
+     */
+    private void nextLocation() {
+	   int x = this.location.x + SpawnView.WIDTH;
+	   int y = this.location.y;
+
+	   if (x + SpawnView.WIDTH > this.screenSize.width) {
+	      x = 0;
+	      y += SpawnView.HEIGHT;
+	   }
+	   this.location.setLocation(x, y);
+    }
+
+    /**
+     * Registers all listeners with the appropriate inner listener classes.
+     */
+    private void registerListeners() {
+	   this.spawnButton.addActionListener(new SpawnListener());
+    }
+    
+    /**
+     * Spawns a new circle JFrame.
+     */
+    private class SpawnListener implements ActionListener {
+
+	   @Override
+	   public void actionPerformed(final ActionEvent evt) {
+	      final CircleView  panel = new CircleView();
+	      final CircleFrame frame = new CircleFrame(panel);
+	      frame.setSize(SpawnView.SIZE);
+	                           // Update the location of the next circle frame.
+	      SpawnView.this.nextLocation();
+	      frame.setLocation(SpawnView.this.location);
+	                           // Execute the model with a thread from the thread pool.
+	      SpawnView.this.threadPool.execute(panel);
+	      frame.setVisible(true);
+	   }
+    }
+}

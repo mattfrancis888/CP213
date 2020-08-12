@@ -1,0 +1,87 @@
+Name: Matthew Francis
+Student ID: 180920880
+
+Q1
+__
+Enter a string: Otto
+'Otto' is a palindrome.
+
+Enter a string: racecar
+'racecar' is a palindrome.
+
+Enter a string: A man, a plan, a canal, Panama!
+'A man, a plan, a canal, Panama!' is a palindrome.
+
+Enter a string: David
+'David' is not a palindrome.
+
+Q2
+__
+Enter a string: var
+'var' is a valid Java name.
+
+Enter a string: var2
+'var2' is a valid Java name.
+
+Enter a string: var_2
+'var_2' is a valid Java name.
+
+Enter a string: 2var
+'2var' is not a valid Java name.
+
+Enter a string: _var2
+'_var2' is a valid Java name.
+
+Enter a string: _
+'_' is not a valid Java name.
+
+Q3
+__
+Enter a string: David Brown
+Enter a shift length: 5
+Shifted: IFANI GWTBS
+Substitute: BATZB VMJUH
+
+Enter a string: David Brown
+Enter a shift length: 9
+Shifted: MJERM KAXFW
+Substitute: BATZB VMJUH
+
+Enter a string: David Brown
+Enter a shift length: 26
+Shifted: DAVID BROWN
+Substitute: BATZB VMJUH
+
+Enter a string: CP213
+Enter a shift length: 2
+Shifted: ER213
+Substitute: IK213
+
+
+Q4
+___
+Enter year: 2000
+2000 is a leap year.
+
+Enter year: 1900
+1900 is not a leap year.
+
+Enter year: 2004
+2004 is a leap year.
+
+Enter year: 1999
+1999 is not a leap year.
+
+Q5
+__
+Enter year: 400
+badcode - Days: 400 = Year: 1981
+goodCode - Days: 400 = Year: 1981
+
+Enter year: 1
+badCode  - Days: 1 = Year: 1980
+goodCode - Days: 1 = Year: 1980
+
+Enter year: 360
+badCode  - Days: 360 = Year: 1980
+goodCode - Days: 360 = Year: 1980

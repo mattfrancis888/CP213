@@ -1,0 +1,24 @@
+package fran0880_l07;
+
+public class ArrayTest_4 {
+
+	  public static void main(String[] args) {
+	    int[] first = { 1, 3, 5, 7, 9 };
+	    int[] second = first;
+
+	    System.out.println("first:");
+
+	    for (int val : first) {
+	    	val = val * 2;
+	      System.out.println(val);
+	    }
+
+	    System.out.println("second:");
+
+	    for (int val : second) {
+	      System.out.println(val);
+	    }
+	  }
+	}
+
+//Second array didnt get changed because you are not changing the val inside the array. You are changing the val inside the loop.

@@ -1,0 +1,40 @@
+package exam;
+
+public class week10multi {
+	  public static void main(String[] args) {
+		  //threads are often thought as paraellel execution
+//they usually do not really execute in parallel–
+		  //Instead, the computer switches resources 
+		  //between threads so that each one does a 
+		  //little bit of computing in turn\
+		  
+		  
+		  //may throw InterruptedException
+		  //if thread is interuped when sleeping
+		  
+		  //run methods tells what the thread should do when it starts
+		  public class MyRunnableTask implements Runnable { 
+			     public void run() { 
+			         // do stuff here 
+			     } 
+			} 
+		  Thread t = new Thread(new MyRunnableTask()); 
+		  t.start();
+		  
+		  //or
+		  Thread t = new Thread(new Runnable() { 
+			    public void run() { 
+			        // stuff here 
+			    } 
+			}); 
+			t.start(); 
+			
+			// if your class provides more functionality 
+			//rather than just running as Thread, you should implement 
+			//Runnable interface to provide a way to run it as Thread. 
+			//If your class only goal is to run as Thread, 
+			//you can extend Thread class.
+		  
+		  
+	  }
+}

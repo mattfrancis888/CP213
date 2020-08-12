@@ -1,0 +1,215 @@
+package exam;
+
+import exam.week5.Animal;
+import exam.week5.CanMakeNoise;
+
+public class week8 {
+	//interfaces and cloning part 2
+	void hi() {
+		System.out.println("hi from week8");
+	}
+	private static int x = 10;
+	class B {
+		void hi() {
+			System.out.println("hi from week8's innerclass");
+		}
+		void hello() {
+			System.out.println(x);
+			week8.this.hi(); //must be used if inner class and outerclass have same method
+			hi();
+		}
+	}
+	
+	//interfaces
+	public interface Base{
+		void base();
+	}
+	public interface Base2{
+		void rawr();
+	}
+	
+	public interface CanMakeNoise extends Base, Base2 {
+		//IMPORTANT: interface can extend more than one parent interface
+	    void makeNoise();
+	}
+	
+	public abstract class Animal implements CanMakeNoise {
+		public void hi() {
+			System.out.println("hei");
+		}
+		  @Override
+		    public void makeNoise() {
+		        System.out.println("Wuff wuff");
+		    }
+	}
+	
+
+public class Dog extends Animal {
+
+	@Override
+	public void base() {
+		// TODO Auto-generated method stub
+		
+	}
+    @Override
+    public void makeNoise() {
+        System.out.println("Wuff wuff");
+    }
+	@Override
+	public void rawr() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+	  
+	 public static void main(String[] args) {
+		//abstract class can implement interface
+		 
+		 //an interface can be derived from a based interface
+		 //derived interface must include the phase extends interfaceName
+		 //eg; public interface hi extends bye
+		 //a class can implement many itnerface but only 1 abstract class
+		 //if interface has same method name it will cause a compilation error like below (run the code)
+		 A a = new A();
+		 a.hi();
+		 
+		 //Java Comparable interface used to sort a array or list of objects based on their natural order.
+		 //Natural ordering of elements is imposed by implementing it’s compareTo() method in the objects.
+//		 
+//		 public class Employee implements Comparable<Employee> {
+//			 
+//			    private int id;
+//			    private String name;
+//			    private LocalDate dob;
+//			     
+//			    @Override
+//			    public int compareTo(Employee o) 
+//			    {
+//			        return Integer.compare(this.getId(), o.getId() );
+//			    }
+//			}
+		 
+		 // 0 = equal
+		 // - 1= comes before the param
+		 // 1 = comes after the param
+		 
+		 
+		 //the CLONE INTERFACE
+//		 public class DogName implements Cloneable {
+//
+//			   private String dname;
+//
+//			   public DogName(String dname) {
+//				this.dname = dname;
+//			   }
+//
+//			   public String getName() {
+//				return dname;
+//			   }
+		 
+		 //IMPORTANT:
+//			   // Overriding clone() method of Object class (NOT CLONEABLE INTERFACE); CLONEABLE interface has 0 methods on the itnerface (Same thing with Seriaziable)
+		    //Default version of clone() method. It creates shallow copy of an object.
+		 	//IF THE CLASS CONTAINS INSTANCE VARIABLES, THIS CAN CREATE A PRIVACY LEAK!
+//			   public Object clone()throws CloneNotSupportedException{  
+//				return (DogName)super.clone();  
+//			   }
+		 
+		 // SOLUTION WOULD BE:
+		 //https://javaconceptoftheday.com/difference-between-shallow-copy-vs-deep-copy-in-java/#:~:text=The%20objects%20which%20implement%20Cloneable%20interface%20are%20only%20eligible%20for%20cloning%20process.&text=The%20default%20version%20of%20clone,copy%20and%20deep%20copy%20work.
+		 //Overriding clone() method to create a deep copy of an object.
+//		 class Student implements Cloneable{
+		  //constructor...
+		 //String b = "hi";
+		 //Course a = new Course(..); //INSTANCE VARIABLE 
+		 
+//		    protected Object clone() throws CloneNotSupportedException
+//		    {
+//		        Student student = (Student) super.clone();
+//		 
+//		        student.course = (Course) course.clone(); -> PRIVACY LEAK HANDLED
+//		 
+//		        return student;
+//		    }
+		 //}
+//		
+//				
+//			   public static void main(String[] args) {
+//				DogName obj1 = new DogName("Tommy");
+//				try {
+//					DogName obj2 = (DogName) obj1.clone();
+//					System.out.println(obj2.getName());
+//				} catch (CloneNotSupportedException e) {
+//					e.printStackTrace();
+//				}
+//			   }
+//			}
+		 //Collections.sort(arrayList);
+		 //inner classes
+		 //advatnages: 1. both can acces to each other private variables/methods 2. outerclass more self contained 3.if inner class is used as
+		 //a helper, inner class should be marked as a private class
+		 
+		 //it is legal for the outer class to reference a private var/method in the  inner class
+		 //it is legal for the inner class to reference a private var/method in the outer class
+		 week8 r = new week8();
+		 week8.B z = r.new B(); //cannot acess B class if it's private. Dosen't seem to work here but try
+		 //https://www.tutorialspoint.com/compile_java_online.php
+		 z.hello();
+		
+		 
+		 //when an inner class must be static
+		 //–If an object of the inner class is created within a static method of the outer class
+		 //–If the inner class must have static member (static classes can only acces static members; private/publc members can acess any modifiers)
+		 //Example of inner clss is created with a static method
+		 //		 class Outer_Demo {
+//			   int num;
+//			   
+//			   // inner class
+//			   private class Inner_Demo {
+//			      public void print() {
+//			         System.out.println("This is an inner class");
+//			      }
+//			   }
+//			   
+//			   // Accessing he inner class from the method within
+//			   static void display_Inner() {
+//			      Inner_Demo inner = new Inner_Demo();
+//			      inner.print();
+//			   }
+//			}
+//			   
+//			public class My_class {
+//
+//			   public static void main(String args[]) {
+//			      // Instantiating the outer class 
+//			      Outer_Demo outer = new Outer_Demo();
+//			     
+//			      
+//			      // Accessing the display_Inner() method.
+//			      outer.display_Inner();
+//			   }
+//			}
+//	 
+		 //in a static inner class:
+		 //instace variables of the outer class cannot be referenced
+		 //non static methods of the outer class cannot be invoked
+		 
+		 //Given an OuterClass that has an InnerClass
+		 //-Any DerivedClass of OuterClass will automatically have InnerClass as an inner class
+		 //-In this case, the DerivedClass cannot override the InnerClass
+	 }
+	 
+}
+
+ interface test{
+	 public void hi();
+}
+ interface test1{
+	public void hi();
+	 
+}
+ class A implements test, test1{
+	 public void hi() {
+		 System.out.println("hey from class A");
+	 }
+}

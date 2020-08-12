@@ -1,0 +1,83 @@
+package exam;
+//import java.util.StringTokenizer;  
+public class week3 {
+
+	static  boolean a;
+	static int b;
+	  public static void main(String[] args) {
+//	  You cannot use == to compare objects		  
+		  //hashcode
+		  //Contract between hashCode() and equals()
+		  //•It is generally necessary to override the hashCode() method whenever equals() method is overridden
+		  //•the general contract for the hashCode() and equals methods  states that equal objects must have equal hash code
+		  //If two objects are equal, they MUST have the same hash code
+		  //If two objects have the same hash code, it doesn't mean that they are equal
+		  
+		  
+		  //testing:
+		  //A program whose only purpose is to test a method is called a driver program
+		  
+		  //One method often invokes other methods, 
+		  //so one way to do this is to first test all the methods invoked by that method, 
+		  //and then test the method itself–This is called bottom-up testing
+		  
+		  // a stub is a way of testing, it returns a value for testing
+		  //The precondition of a method states what is assumed to be true when the method is called
+		  //•The postcondition of a method states what will be true after the method is executed, as long as the precondition
+		  
+		  //Overloading is when two or more methods in the same class have the same method name
+		  //must have different signatures to be valid
+		  // when overloading methods, you cannot have different return types in the same class. AS demonstrated below
+		  
+		  //constructors:
+		  //Like any ordinary method, every constructor has a this parameter
+		  
+		  //Instance variables are automatically initialized in
+		  //Java–boolean types are initialized to false–Other primitives are
+		  //initialized to the zero of their type–Class types are initialized to null
+		  
+		  System.out.println(week3.a);
+		  System.out.println(week3.b);
+		  
+		  //   StringTokenizer st = new StringTokenizer("my name is khan"," ");  
+		   //  while (st.hasMoreTokens()) {  
+		     //    System.out.println(st.nextToken());  
+		    // }  
+		  
+//		  Output:my
+//	       name
+//	       is
+//	       khan
+		  
+		  //WEEK 3 PT 2:
+		  //A static method cannot refer to an instance variable of the class, and it cannot invoke a nonstatic method of the class
+		  //A static method has no this, so it cannot use an instance variable or
+		  // method that has an implicit or explicit this for a calling object–A static method can invoke another static method
+		  
+		  //Wrapper class
+		  //Unboxing:  the process of going from an object of a wrapper class to the corresponding value of a primitive type
+		  // i = integerObject.intValue();
+		  //boxing : converting primitive type to wrapper class
+		  //But java now does this auotmatically, eg:
+		  //Integer integerObject = 42; Uboxing
+		  //int i = integerObject;; Boxing
+		  
+		  //•A computer has two forms of memory
+		  //Secondary memory is used to hold files for PERMANENT STORAGE
+		  //Main memory is used by a computer when it is RUNNING A PROGRAM (eg; variables)
+		  
+		  //The == operator only checks that two class type variables have the same memory addres
+		  //Unlike the equals method, it does not check that their instance variables have the same valu
+	  }
+	  
+	  
+	  
+	  public int disp(char c, int num)
+	   {
+	       System.out.println("I’m the first definition of method disp");
+	   }
+	   public void disp(int num, char c)
+	   {
+	       System.out.println("I’m the second definition of method disp" );
+	   }
+}

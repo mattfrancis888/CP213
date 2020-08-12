@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"cp213","l":"DoubleDeque"},{"p":"cp213","l":"DoubleLink"},{"p":"cp213","l":"DoubleList"},{"p":"cp213","l":"DoubleNode"},{"p":"cp213","l":"DoubleQueue"},{"p":"cp213","l":"DoubleSortedList"},{"p":"cp213","l":"Food"}]

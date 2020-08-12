@@ -1,0 +1,9 @@
+package cp213;
+
+import javax.swing.JPanel;
+import java.awt.GridLayout;
+
+@SuppressWarnings("serial")
+public class RTButtonView extends JPanel {
+	
+}
